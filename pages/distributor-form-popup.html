@@ -1,0 +1,101 @@
+<div class="animated fadeInDown">
+<div class="close-wrap">
+    <img class="close-popup" src="img/android-close-new.png" alt="Close Button" ng-click="closeDist()"/>
+</div>
+<div class="info-wrap">
+    <!--<div class="close-popup" ng-click="close()">X</div>    -->
+    <h2 class="center">Become a Distributor</h2>
+    <form novalidate name="form" ng-submit="submitDist()">
+        <div class="row form-row">
+            <div class="col-md-6 form-col">
+                <input type="text" placeholder="Name" name="name" ng-model="formDist.name"  required>
+                <div ng-show="form.$submitted || form.name.$touched">
+                    <span ng-show="form.name.$error.required" class="error">Name is required</span>
+                </div>
+                <input type="email" placeholder="Email" name="email" ng-model="formDist.email"  required>
+                <div ng-show="form.$submitted || form.email.$touched">
+                    <span ng-show="form.email.$error.required" class="error">Email is required</span>
+                    <span ng-show="form.email.$error.email" class="error">Invalid Email</span>
+                </div>
+                <input type="text" placeholder="Company" name="company" ng-model="formDist.company"  required>
+                <div ng-show="form.$submitted || form.company.$touched">
+                    <span ng-show="form.company.$error.required" class="error">Company name is required</span>
+                </div>
+                <input type="text" placeholder="Phone" name="phone" ng-model="formDist.phone"  required>
+                <div ng-show="form.$submitted || form.phone.$touched">
+                    <span ng-show="form.phone.$error.required" class="error">Phone number is required</span>
+                </div>
+                <input type="text" placeholder="Street Address" name="address" ng-model="formDist.address"  required>
+                <div ng-show="form.$submitted || form.address.$touched">
+                    <span ng-show="form.address.$error.required" class="error">Street address is required</span>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="text" placeholder="City" name="city" ng-model="formDist.city"  required>
+                        <div ng-show="form.$submitted || form.city.$touched">
+                            <span ng-show="form.city.$error.required" class="error">City is required</span>
+                        </div>
+                        <input type="text" placeholder="Zipcode" name="zipcode" ng-model="formDist.zipcode"  required>
+                        <div ng-show="form.$submitted || form.zipcode.$touched">
+                            <span ng-show="form.zipcode.$error.required" class="error">Zipcode is required</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" placeholder="State" name="state" ng-model="formDist.state"  required>
+                        <div ng-show="form.$submitted || form.state.$touched">
+                            <span ng-show="form.state.$error.required" class="error">State is required</span>
+                        </div>
+                        <input type="text" placeholder="Country" name="country" ng-model="formDist.country" value="USA"  required>
+                        <div ng-show="form.$submitted || form.country.$touched">
+                            <span ng-show="form.country.$error.required" class="error">country is required</span>
+                        </div>
+                    </div>
+                </div>
+                        
+            </div>
+            <div class="col-md-6 form-col">
+                <input type="text" placeholder="Website" name="website" ng-model="formDist.website"/>
+                                <h4>Please explain your business plan to sell our products</h4>
+                <textarea name="explain" ng-model="formDist.explain" required></textarea>
+                <div ng-show="form.$submitted || form.explain.$touched">
+                    <span ng-show="form.explain.$error.required" class="error">This field is required</span>
+                </div>
+                <h4>How did you hear about us?</h4>
+                <select name="options" ng-model="formDist.options" required>
+                    <option value="">Please Make a Selection</option>
+                    <option value="Google">Google</option>
+                    <option value="Bing">Bing</option>
+                    <option value="Yahoo!">Yahoo!</option>
+                    <option value="Email Marketing">Email Marketing</option>
+                    <option value="Fancy Food Trade Show">Fancy Food Trade Show</option>
+                    <option value="Friend / Business Associate">Friend / Business Associate</option>
+                    <option value="PS Magazine">PS Magazine</option>
+                    <option value="PSDA Website/Sourcing">PSDA Website/Sourcing</option>
+                    <option value="PSDA Email">PSDA Email</option>
+                    <option value="PSDA Trade Show">PSDA Trade Show</option>
+                    <option value="Print + Promo Magazine">Print + Promo Magazine</option>
+                    <option value="Print + Promo Email">Print + Promo Email</option>
+                    <option value="Print + Promo Ad">Print + Promo Ad</option>
+                    <option value="Quick Printing Magazine">Quick Printing Magazine</option>
+                    <option value="Wineries Unlimited Trade Show">Wineries Unlimited Trade Show</option>
+                    <option value="RFID Live!">RFID Live!</option>                                    
+                    <option value="Other">Other</option>
+                </select>
+                <div ng-show="form.$submitted">
+                    <span ng-show="form.options.$error.required" class="error">Please pick an options</span>
+                </div>
+            </div>
+        </div>
+        <div class="row form-row">
+            <div class="col-md-6 form-col">
+                <input type="button" value="Clear" class="btn btn-blue2" ng-click="clearDist()">    
+            </div>
+            <div class="col-md-6 form-col">
+                <input type="submit" value="Submit" class="btn btn-blue2">    
+            </div>
+            
+        </div>
+        <spinner ng-show="formSpinner"></spinner>
+    </form>
+</div>   
+</div>

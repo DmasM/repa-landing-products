@@ -1,0 +1,81 @@
+<div class="animated fadeInDown">
+<div class="close-wrap">
+    <img class="close-popup" src="img/android-close-new.png" alt="Close Button" ng-click="closeSample()"/>
+</div>
+<div class="info-wrap">
+    <!--<div class="close-popup" ng-click="close()">X</div>    -->
+    <h2 class="center">Request Free Sample</h2>
+    <form novalidate name="sampleForm" ng-submit="submitSample()">
+        <div class="row form-row">
+            <div class="col-md-6 form-col">
+                <input type="text" placeholder="Name" name="personName" ng-model="formSample.name"  required>
+                <div ng-show="sampleForm.$submitted || sampleForm.personName.$touched">
+                    <span ng-show="sampleForm.personName.$error.required" class="error">Name is required</span>
+                </div>
+                <input type="email" placeholder="Email" name="email" ng-model="formSample.email"  required>
+                <div ng-show="sampleForm.$submitted || sampleForm.email.$touched">
+                    <span ng-show="sampleForm.email.$error.required" class="error">Email is required</span>
+                    <span ng-show="sampleForm.email.$error.email" class="error">Invalid Email</span>
+                </div>
+                <input type="text" placeholder="Company" name="company" ng-model="formSample.company"  required>
+                <div ng-show="sampleForm.$submitted || sampleForm.company.$touched">
+                    <span ng-show="sampleForm.company.$error.required" class="error">Company name is required</span>
+                </div>
+                <input type="text" placeholder="Phone" name="phone" ng-model="formSample.phone"  required>
+                <div ng-show="sampleForm.$submitted || sampleForm.phone.$touched">
+                    <span ng-show="sampleForm.phone.$error.required" class="error">Phone number is required</span>
+                </div>
+                <input type="text" placeholder="Website" name="website" ng-model="formSample.website"/>                        
+            </div>
+            <div class="col-md-6 form-col">
+                <input type="text" placeholder="Street Address" name="address" ng-model="formSample.address"  required>
+                <div ng-show="sampleForm.$submitted || sampleForm.address.$touched">
+                    <span ng-show="sampleForm.address.$error.required" class="error">Street address is required</span>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="text" placeholder="City" name="city" ng-model="formSample.city"  required>
+                        <div ng-show="sampleForm.$submitted || sampleForm.city.$touched">
+                            <span ng-show="sampleForm.city.$error.required" class="error">City is required</span>
+                        </div>
+                        <input type="text" placeholder="Zipcode" name="zipcode" ng-model="formSample.zipcode"  required>
+                        <div ng-show="sampleForm.$submitted || sampleForm.zipcode.$touched">
+                            <span ng-show="sampleForm.zipcode.$error.required" class="error">Zipcode is required</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" placeholder="State" name="state" ng-model="formSample.state"  required>
+                        <div ng-show="sampleForm.$submitted || sampleForm.state.$touched">
+                            <span ng-show="sampleForm.state.$error.required" class="error">State is required</span>
+                        </div>
+                        <input type="text" placeholder="Country" name="country" ng-model="formSample.country" value="USA"  required>
+                        <div ng-show="sampleForm.$submitted || sampleForm.country.$touched">
+                            <span ng-show="sampleForm.country.$error.required" class="error">country is required</span>
+                        </div>
+                    </div>
+                </div>
+                <select name="sample" ng-model="formSample.options" required>
+                    <option value="">Select a sample</option>
+                    <option value="Custom Labels">Custom Labels</option>
+                    <option value="Stock Labels">Stock Labels</option>
+                    <option value="RFID">RFID</option>
+                </select>
+                <div ng-show="sampleForm.$submitted">
+                    <span ng-show="sampleForm.sample.$error.required" class="error">Please select a sample</span>
+                </div>
+            </div>
+        </div>
+        <div class="row form-row">
+            <div class="col-md-6 form-col">
+                <input type="button" value="Clear" class="btn btn-blue2" ng-click="clearSample()">    
+            </div>
+            <div class="col-md-6 form-col">
+                <input type="submit" value="Submit" class="btn btn-blue2">    
+            </div>
+            
+        </div>
+        <spinner ng-show="formSpinner"></spinner>
+    </form>
+   
+</div>
+</div>

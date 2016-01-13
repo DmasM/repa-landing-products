@@ -1,0 +1,1394 @@
+/**********@*************/
+@font-face{
+    font-family:'nevis';
+    src: url('nevis.ttf') format('truetype')
+}
+
+@mixin transition($sec){
+    -webkit-transition:all $sec;    
+    transition: all $sec;
+}
+@mixin transition-delay($msec){
+    -webkit-transition-delay:$msec;    
+    transition-delay:$msec;
+}
+@mixin transform($scale){
+    -webkit-transform:$scale;
+    -moz-transform:$scale;
+    -o-transform:$scale;
+    -ms-transform:$scale;
+    transform:$scale;
+}
+
+$repacorp-red:#a50127;
+$light-red:#dd0235;
+$dark:#333;
+$error:#ee0e0e;
+$black:#282828;
+$orange: #ffb611;
+$gray:#909090;
+$blue:#1cc0fe;
+$placeholder:#b1abae;
+$light-gray:#d9d9d9;
+
+
+$droid-sans:'Droid Sans', sans-serif;
+$open-sans:'Open Sans Condensed', sans-serif;
+$roboto:'Roboto Condensed', sans-serif;
+$raleway:'Raleway', sans-serif;
+
+/*********MAIN***************/
+body, .container{
+    width:100%;
+}
+li{
+    list-style-type:none;
+}
+ul{
+    font-family:$roboto;
+    font-size:1.1em;
+}
+.bullet-list li{
+    list-style-type:disc;
+    font-size:.9em;
+}
+.fa-question-circle{
+    color:$light-gray;
+    font-size:1.2em;
+}
+.form-question{
+    display:none;
+}
+body.noScroll{
+    overflow:hidden;
+}
+.center{
+    text-align:center;
+}
+.row-eq-height{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:flex;
+}
+/*******HEADERS AND TEXT***********/
+h1,h2,h3,h4,h5{
+    font-family:$droid-sans;
+    font-weight:normal;
+}
+h1{
+    font-size:50px;    
+}
+h2{
+    font-size:35px;
+    color:$repacorp-red;
+}
+h3{
+    font-size:28px;
+    color:$repacorp-red;
+}
+p{
+    text-align:left;
+    line-height:30px;
+    font-family:$roboto;
+    font-size:16px;   //was 18px    
+}
+a{
+    color:$blue;
+    text-decoration:none;
+    cursor:pointer;
+    outline:0;
+    font-family:$roboto;
+    @include transition(.3s);
+    &:hover{
+       text-decoration: none;
+    }   
+}
+
+.error{
+    font-family: $roboto;
+    color:$error;
+    padding-left:5px;
+}
+
+/***********INPUTS************/
+select{
+    width:100%;
+    height:40px;
+    font-family:$roboto;
+    font-size:17px;
+    border:none;
+    border-bottom:1px solid #d9d9d9;  //or #e9e9e9
+    padding-left:10px;
+    outline:none;
+    
+}
+input[type="text"], input[type="password"], input[type="number"], input[type="email"]{
+    outline:none;
+    @extend select;    
+    border:none;
+    border-bottom:1px solid $light-gray;
+    @include transition(.3s);
+}
+
+input[type="text"]:focus{
+    border-bottom:1px solid rgba(2,150,206,.7);    
+}
+input[type="password"]:focus{
+    @extend input[type="text"]:focus;
+}
+input[type="number"]:focus{
+    @extend input[type="text"]:focus;
+}
+input[type="text"].ng-touched.ng-invalid, 
+input[type="email"].ng-touched.ng-invalid, 
+input[type="password"].ng-touched.ng-invalid, 
+input[type="number"].ng-touched.ng-invalid {
+    border-bottom:1px solid $error;
+}
+.textLabel{
+    font-family:$roboto;
+    font-size:1.6rem;
+    font-weight:normal;
+    position:absolute;
+    top:10px;
+    left:25px;
+    color:$placeholder;
+    cursor:text;
+    @include transition(.3s ease-out);
+}
+.textLabel.active{    
+    font-weight:bold;
+    color:#282827;
+}
+
+/***********MOPQ TEXTBOXES FOR SIGNING UP*************/
+#firstLabel.active{@include transform(translateX(-110px))}
+#lastLabel.active{@include transform(translateX(-109px))}
+#companyLabel.active{@include transform(translateX(-100px))}
+#companyPhoneLabel.active{@include transform(translateX(-143px))}
+#companyFaxLabel.active{@include transform(translateX(-126px))}
+#companyEmailLabel.active{@include transform(translateX(-138px))}
+#passwordLabel.active{@include transform(translateX(-102px))}
+#csrLabel.active{@include transform(translateX(-118px))}
+#address1Label.active{@include transform(translateX(-144px))}
+#address2Label.active{@include transform(translateX(-159px))}
+#cityLabel.active{@include transform(translateX(-65px))}
+#postalLabel.active{@include transform(translateX(-116px))}
+
+/**********************************************************/
+
+textarea{
+    @extend select;
+    @include transition(.1s);
+    height:200px;    
+}
+textarea:focus{
+    @extend input[type="text"]:focus;
+}    
+input[type="checkbox"]{
+    margin-right:5px;
+    display:none;
+    + label{
+        display:inline-block;
+        font-family:$roboto;
+        font-size:1.1em;
+        font-weight:normal;
+        
+    }
+}
+input[type="radio"]{
+    @extend input[type="checkbox"];
+}
+.input-group-addon{
+    background-color:#fff;
+    border-color:#d9d9d9;
+}
+
+/************CUSTOM CHECKBOX AND RADIO BUITTON***********/
+.custom-input{
+    display:inline-block;
+    width:20px;
+    height:20px;
+    cursor:pointer;
+    margin-right:10px;
+    margin-bottom:0;
+    vertical-align:bottom;
+    background-image:url('../img/sprite-check.png');
+}
+.checkbox{
+    background-position:-5px -65px;
+}
+input[type="checkbox"] + label:hover .checkbox{
+    background-position: -5px -35px;
+}
+input[type="checkbox"]:checked + label .checkbox{
+    background-position: -5px -5px;
+}
+
+.radio{    
+    background-position: -5px -155px;
+}
+input[type="radio"] + label:hover .radio{
+    background-position: -5px -125px;
+}
+input[type="radio"]:checked + label .radio{
+    background-position: -5px -95px;
+}
+/*********LIST ITEMS****************/
+.list-bullet{
+    text-align:left;
+    font-family:$roboto;
+    font-size:1.1em;
+    li{
+        color:$repacorp-red;        
+        list-style:disc;
+        margin-bottom:10px;
+        span{            
+            font-family:$roboto;
+            color:$dark;
+        }
+    }
+}
+.list-numbered{
+    @extend .list-bullet;
+    li{
+        list-style:decimal;
+    }
+}
+
+/************HEADER**************/
+.header-content{
+    position:fixed;
+    width:100%;
+    background:rgba(255,255,255,.95);
+    @include transition(.3s);
+    border-bottom:1px solid #f1f1f1;
+    z-index:1000;    
+    top:0;
+}
+header{    
+    margin-left:auto;
+    margin-right:auto;
+    max-width:1200px;
+    position:relative;
+    
+    ul{
+        list-style-type:none;
+        text-align:right;
+        margin-bottom:0;
+        li{
+            display:inline-block;
+            height:inherit;
+            vertical-align:middle;
+        }
+    }
+    .row{
+        height:inherit;
+    }
+    .header-container{
+        height:80px;
+        @include transition(.3s);
+    }
+    .menu-col{
+        height:inherit;
+    }
+}
+
+.menu{
+    height:inherit;
+    .navLink{
+        color:$black;
+        font-family:$droid-sans;
+        text-decoration:none;
+        font-size:14px;
+        letter-spacing:5px;
+        text-transform:uppercase;
+        @include transition(.3s);
+        display:block;
+        height:81px;
+        padding:30px 10px 0 10px;
+        border-right:1px solid #f1f1f1;
+    }
+    .navLink:hover{
+        color:$repacorp-red;
+        background:#f1f1f1;
+    }
+    .submenu{
+        font-family:$droid-sans;
+        font-size:14px;
+        letter-spacing:3px;
+        position:absolute;
+        padding:0;
+        overflow:hidden;
+        color:#fff;
+        pointer-events:none;
+        width:inherit;
+        max-height:0;
+        @include transition(.3s);
+        li{
+            display:block;
+            text-align:center;
+            margin:0;
+            background:$repacorp-red;
+            opacity:0;
+        }
+    }
+}
+.menu-right{    
+    font-size:1.1em;
+    padding-right:3em;
+    a{
+        display:inline-block;        
+        color:$dark;     
+        border-top:none;
+        padding:10px;
+        margin-top:10px;
+        font-family:$roboto;
+        &.selected{
+            background:$repacorp-red;
+            color:#fff;
+        }
+    }
+}
+.headerLogo{
+    margin-top:10px;
+    height:58px;
+    // display:block;
+    // width:400px;
+    // height:58px;
+    // background:url('../img/Repacorp-Horizontal-Logo400.png') no-repeat;
+    
+}
+.subLink{
+    color:#fff;
+    display:block;
+    font-family:$raleway;
+    font-size:15px;
+    padding:10px;
+    @include transition(.3s);
+    border-bottom:1px solid #b72047;
+}
+.subLink:hover{
+    background:#c5002e;
+    color:#fff;
+}
+.left-header{
+    display:inline-block;
+    width:400px;
+}
+.right-header{
+    text-align:center;
+    display:inline-block;
+    width:700px;
+    float:right;
+}
+
+.menu > li:hover .submenu li:nth-child(1){
+    @include transition-delay(0s);
+}
+.menu > li:hover .submenu li:nth-child(2){
+    @include transition-delay(66ms);
+}
+.menu > li:hover .submenu li:nth-child(3){
+    @include transition-delay(133ms);
+}
+.menu > li:hover .submenu li:nth-child(4){
+    @include transition-delay(200ms);
+}
+.menu > li:hover .submenu li:nth-child(5){
+    @include transition-delay(266ms);
+}
+
+/************TITLE HEADING*************/
+.sub-title-container{
+    width:100%;
+    background:$repacorp-red;
+    height:auto;
+    padding:15px 0;
+    margin-top:30px;
+}
+.sub-title{
+    max-width:1200px;
+    margin:0 auto;
+    h1{
+        color:#fff;
+    }
+}
+/*********STICKY HEADER************/
+.stickyHeader{
+    position:fixed;
+    top:0;
+    width:100%;
+    border-bottom:#7c7c7c;
+    box-shadow:0 0 7px 1px #bebebe;
+    z-index:1000;
+    
+    .container{
+        
+    }
+    .navLink{
+        padding-top:22px;
+        
+    }
+}
+.header-content .headerLogo , .header-container{
+    @include transition(.3s);
+    }
+/************LOGINFORM****************/
+
+/************IMG CONTENT************/
+.img-content-container{
+    width:100%;
+    margin-top:30px;
+    border-bottom:1px solid #f1f1f1;
+    height:600px;
+}
+.img-content{
+    height:600px;
+    max-width:1200px;
+    margin:0 auto;
+    color:#fff;
+    font-family:$raleway;
+    font-size:50px;
+    .col-md-12{
+        text-align:center;
+        top:50%;
+    }
+    .btn{
+        position:relative;
+        width:200px;
+    }
+}
+#slide-image{
+    position:relative;
+    top:0;
+    left:0;
+    width:1200px;
+    height:600px;
+    div{
+        margin:0 auto;
+        cursor:move;
+        position:absolute;
+        overflow:hidden;
+        left:0;
+        top:0;
+        height:600px; 
+        width:inherit;
+    }
+}
+/************IFRAME Phone***************/
+
+
+ /**************CONTENT*********************/
+ .content-2{
+     width:100%;
+     background:#f4f4f4;
+     height:auto;
+     padding:30px 0;
+     p{
+         color:$dark;
+     }
+     h3{
+         color:$repacorp-red;
+         text-align:left;
+     }
+ }
+
+ .news-content{
+     .left{
+         border-right:1px solid #dcdcdc;
+     }
+     .column{
+         padding:0 30px;
+     }
+ }
+ .info-content{
+     .row{
+         margin:30px 0;
+     }
+     .col-md-4{
+         text-align:center;
+         font-family:$raleway;
+         font-size:15px;
+         color:#fff;
+         p{
+         text-align:left;
+         padding-left:10px;
+         line-height:30px;
+        }
+     }
+     
+ }
+ .innerContent{
+     margin:0 auto;
+     max-width:1200px;
+     height:auto;
+     &:before{
+        display: block; 
+        content: " "; 
+        margin-top: -100px; 
+        height: 100px; 
+        visibility: hidden; 
+     }
+ }
+ 
+ .mopq-inner{
+     box-shadow:0 25px 25px -30px rgba(0,0,0,.2);
+
+ }
+ .content, .aladdin-content{
+         width:100%;
+         height:auto;
+         margin:30px 0;
+     
+ }
+ .dynamicInput{
+     .col1{
+         padding-left:0;
+     }
+     .col2{
+         padding-right:0;
+     }
+ }
+ .main-content{
+    background:#fff;
+    font-family:$raleway;
+    font-size:14px;
+    max-width:1200px;
+    margin:30px auto;
+    text-align: center;
+}
+
+#map-canvas{
+    height:100%;
+    padding:0;
+    margin:0;
+}
+
+intro-content h2{
+    text-align:center;
+}
+ /*********CONTACT FORM***************/
+ .contact-form{
+     .row{
+         margin:30px 0;
+     }
+ }
+ .circle-head{
+      background:url('../img/steve-jobs.png');
+    border-radius:50%;
+    height:auto;
+ }
+ .circle-img-border{
+    margin-top:20px;
+    border-radius:50%;   
+}
+h4.circle-img-title{
+    font-family:$raleway;
+    color:#262627;
+}
+
+.right-arrow{
+    padding-top:60px;
+    padding-left:40px;
+    img{
+        width:40%;
+    }
+}
+.img-circle-row{
+    margin-top:20px;
+    margin-bottom:20px;
+}
+ 
+ /****************PRODUCTS LANDING PAGE*****************/
+ .product-image{
+     border-radius:50%;
+     margin:0 auto 25px auto;
+     display:block;     
+ }
+
+.circle-label{    
+    display:block;
+    margin:25px auto 0 auto;          
+    width:auto;
+    height: 300px;
+    background-repeat: no-repeat;
+    &#stock-labels{
+        background-image: url('../img/section_photos/Stock-Labels.jpg');
+    }
+    &#custom-labels{
+        background-image: url('../img/section_photos/Custom-Labels.jpg');
+    }
+    &#promo-labels{
+        background-image: url('../img/technics.jpg');
+    }
+    &#variable-print{
+        background-image: url('../img/technics.jpg');
+    }
+    &#rfid-labels{
+        background-image: url('../img/section_photos/RFID-Enabled.jpg');        
+    }
+    &#digital-short{
+        background-image: url('../img/food.jpg');
+    }
+    &#wide-format{
+        background-image: url('../img/section_photos/Wide-Format.jpg');
+    }
+    &#thermal-transfer{
+        background-image: url('../img/food.jpg');
+    }
+    &#screen-printing{
+        background-image: url('../img/technics.jpg');
+    }
+    &#sky-scapes{
+        background-image: url('../img/sports.jpg');
+    }
+    &#label-accessories{
+        background-image: url('../img/technics.jpg');
+    }
+    &#overruns{
+        background-image: url('../img/sports.jpg');
+    }
+    &.middle-label{
+        position:relative;
+        transform: translateY(50%);
+        margin:0 auto;
+    }
+}
+
+.product-row{
+    margin-bottom:30px;
+    margin-top:20px;
+}
+.product{
+    h3{
+      text-align:center; 
+    }
+}
+.product-info{   
+    
+    h2{
+        text-align:center;
+    }
+}
+.product-list{
+    margin:0;
+    padding:0;                                    
+    a{
+        display:block;
+        margin-bottom:10px;    
+        text-align:center;
+        border:1px solid $dark;
+        color:$dark;
+        padding:7px;
+        background:transparent;
+        @include transition(.1s);
+        &:hover{
+            color:#fff;
+            background: $repacorp-red;
+            border:1px solid $repacorp-red;
+        }  
+       
+    }
+}
+.more-info{
+    display:inline-block;
+    background-color:#0296ce;
+    padding:5px 10px;
+    color:#fff;
+    border-radius:2px;
+    &:hover{
+        color:#fff;
+        background-color:$blue;
+    }
+}
+.fullImageContent{
+    width:100%;
+    padding:0;
+    margin:40px 0;
+    height:470px;    
+    background-size:cover;
+    background-position: center center;
+    background-attachment:fixed;    
+    &#image1{
+        background-image:url('../img/divider_photos/Color-Custom-Labels-Alt.jpg');
+    }
+    &#image2{
+        background-image:url('../img/divider_photos/Color-Stock-Labels-Alt.jpg');
+    }
+    &#image3{
+        background-image:url('../img/divider_photos/Color-RFID-Press-Alt.jpg');
+    }    
+}
+.fullImageContentLast{
+    width:100%;
+    padding-top:5%;
+    // margin:40px 0;
+    height:350px;    
+    background-size:cover;
+    background-position: center center;
+    background-attachment:fixed;
+    color:#fff;
+    &#image-machine{
+        background-image:url('../img/divider_photos/B&W-Machine.jpg');
+    }
+}
+.fullImageContentInner{
+    width:100%;
+    padding:0;
+    height:470px;
+    background-size:cover;
+    background-position: center center;
+    background-attachment: fixed;
+    opacity:1;
+    @include transition(.4s);
+    &:hover{
+        opacity:0;
+    }
+    &#imageInner1{
+        background-image:url('../img/divider_photos/B&W-Custom-Labels-Alt.jpg');
+    }
+    &#imageInner2{
+        background-image:url('../img/divider_photos/B&W-Stock-Labels-Alt.jpg');
+    }
+    &#imageInner3{
+        background-image:url('../img/divider_photos/B&W-RFID-Press-Alt.jpg');
+    }
+}
+.popup-product{
+    display:none;
+    position:fixed;
+    top:0;
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,.6);
+    z-index:1001;    
+}
+
+.info-wrap{
+    position:relative;
+    background:#fff;
+    max-width: 800px;
+    max-height:800px;
+    overflow-y: auto;
+    margin:0 auto;
+    padding:45px;
+    z-index:1005;    
+}
+.close-wrap{
+    position:relative;
+    background:transparent;
+    height:100px;
+    max-width:800px;
+    margin:0 auto;
+}
+.close-popup{    
+    height:35px;
+    width:35px;
+    bottom:12px;
+    right:20px;
+    position:absolute;
+    cursor:pointer;
+}
+.popup-paragraph br{
+    line-height:2.5em;
+}
+.popup-second-header{
+    font-size:1.5em;
+    color:$repacorp-red;
+}
+.popup-sample{
+    display:none;
+    position:fixed;
+    top:0;
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,.6);
+    z-index:1001;    
+}
+
+.popup-dist{
+    display:none;
+    position:fixed;
+    top:0;
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,.6);
+    z-index:1001;
+    
+}
+.popup-success{
+    display:none;
+    position:fixed;
+    top:0;
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,.6);
+    z-index:1001;
+   
+}
+.form-col input{
+    margin-bottom:10px;
+}
+.form-row{
+    margin-bottom:20px;
+}
+/************DISTRIBUTOR LANDING PAGE FORM***************/
+.form-content .row{
+    margin-top:25px;
+    margin-left:0;
+    margin-right:0;
+}
+ 
+.form-container{
+    width:100%;
+    height:100%;
+    background:rgba(38,38,38,.25);
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+    
+}
+.form-request-container{    
+    display:none;
+   
+}
+.form-messages-container{    
+    display:none;   
+}
+.form-failure-container{
+    display:none;
+}
+.form-message, .form-failure-message{
+    text-align:center;
+}
+.form-failure-message{
+    color:#f62a43;
+}
+ 
+.form{
+    padding:30px;
+}
+
+.form-col .row{
+    margin-bottom:10px;
+    margin-left:0;
+    margin-right:0;
+}
+.form-close{
+    cursor:pointer;
+    color:#a50127;
+    padding:5px;
+}
+.form-success, .form-failure{
+    border:1px solid rgba(38,38,38,.6);
+    position:absolute;
+    top:0;bottom:0;left:0;right:0;
+    width:800px;
+    height:200px;
+    max-width:100%;
+    max-height:100%;
+    overflow:auto;
+    background:#fff;
+    margin:auto;
+}
+ .loading{
+    display:none;
+    position:fixed;
+    width:50px;
+    height:50px;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    z-index:1100;
+    font-size:40px;        
+}
+ .submit-loading{
+     margin-left:0;
+     font-size:18px;
+     visibility:hidden;
+     opacity:0;
+     transition: visibility 0s, opacity 0.2s linear; 
+ }
+ .submit-loading.show-inline{
+     margin-left:10px;
+     visibility:visible;
+     opacity:1;
+ }
+ 
+ /**************LOADING SPINNER*************/
+ .spinner{
+     position:absolute;
+     width:70px;
+     height:70px;
+     display:block;
+     top:50%;
+     left:50%;
+     margin-top:-35px;
+     margin-left:-35px;
+     div{
+        width:18px;
+        height:18px;
+        background-color:$orange;
+        border-radius:50%;
+        display:inline-block;
+        -webkit-animation:sk-bouncedelay 1.4s infinite ease-in-out both;
+        animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+     }
+     .circle1{
+         -webkit-animation-delay: -0.32s;
+         animation-delay: -0.32s;
+     }
+     .circle2{
+         -webkit-animation-delay: -0.16s;
+         animation-delay: -0.16s;
+     }     
+ }
+ 
+ @-webkit-keyframes sk-bouncedelay{
+     0%, 80%, 100%{
+         -webkit-transform:scale(0);
+     }
+     40%{
+         -webkit-transform:scale(1.0);
+     }
+ }
+ 
+ @keyframes sk-bouncedelay{
+     0%, 80%, 100%{
+         -webkit-transform:scale(0);
+         transform:scale(0);
+     }
+     40%{
+         -webkit-transform:scale(1.0);
+         transform:scale(1.0);
+     }
+ }
+ /************BUTTONS & COLOR *************/
+ .btn{
+     border-radius:0;
+     display:block;
+     border-bottom:4px solid rgba(38,38,38,.6);
+     border-left:0 solid transparent;
+     border-right:0 solid transparent;     
+     color:#fff;
+     width:100%;
+     padding:10px;     
+     letter-spacing:1px;
+     font-family:$raleway;
+     @include transition(.2s);
+}
+ .btn-trans{
+     background:transparent;
+     color:#282828;
+ }
+ .btn-trans:hover{
+     background:#7c7c7c;
+     color:#fff;
+     
+ }
+ .btn-repacorpred{
+     background:$repacorp-red;
+     color:#fff;
+ }
+ .btn-repacorpred:hover{
+     background:#c8274d;
+     color:#fff;
+ }
+ .btn-red{
+     background-image:linear-gradient(to bottom, #d10f3c, #a50127);
+     box-shadow:0 0 3px 1px #929292;
+
+}
+.btn-red:hover{
+   background-image:linear-gradient(to bottom, #f22a58, #c4022f);
+}
+.btn-red:active{
+
+}
+.login{
+ letter-spacing: 1px; 
+    width:auto;
+}
+.story-btn{
+    margin-bottom:20px;   
+}
+.btn-dark{
+    background:transparent;
+    color:#452832;
+    border:1px solid #452832;
+}
+.btn-dark:hover{
+    background:#272727;
+    color:#fff;
+    border:1px solid #272727;
+}
+.btn-blue{
+    background:#0390a5;   
+}
+.btn-blue:hover{
+    background:#02b9d4; 
+    color:#fff;
+}
+.btn-blue2{
+    background:#0296ce;
+    color:#fff;
+    
+}
+.btn-blue2:hover{
+    background:#1cc0fe;
+    color:#fff;
+    
+    
+}
+.blue{
+    color:#0296ce;   
+}
+.date-posted{
+    font-weight:normal; 
+    color:$black;
+}
+.btn-purple{
+    background:#571c55;   
+}
+
+.btn-purple:hover{
+    color:#fff;  
+    background:#554472;
+}
+.purple, link-purple{
+    color:#554472;   
+}
+.btn-gray{
+    background:transparent;
+    border:1px solid #d5d5d5;
+    color:#d5d5d5;
+}
+
+.btn-center{
+    max-width:350px;
+    margin:0 auto;
+}
+.gray, .link-gray{
+    color:#d5d5d5;   
+}
+.btn-gray:hover{
+    background:#d5d5d5;
+    color:#fff;
+}
+.btn-white{
+    border:1px solid #fff;
+    color:#fff;
+    background:transparent;
+}
+.btn-white:hover{
+    background:#fff;
+    color:#262627;
+}
+.btn-quote:hover{
+    background:transparent;
+    color:#fff;
+    border:1px solid #fff;
+}
+
+.btn-brightred{
+    background:#fa003a;   
+}
+
+.btn-brightred:hover{
+    background:#d10f3c;
+    color:#fff;
+}
+.red{
+    color:#a50127;   
+}
+.brightred, .link-brightred{
+    color:#D54364;   
+}
+.btn-orange{
+    background:#FFB611; 
+    color:#fff;
+}
+.btn-orange:hover{
+    background:#ffd577;
+    color:#fff;
+}
+.orange{
+    color:  #ff5a00; 
+}
+
+.link-orange {
+    color:#ffb611;
+}
+.link-orange:hover{
+    color:#ffd577;
+}
+.yellow{
+    color:#ffb611;   
+}
+
+.lighterblue{
+    color:#0296ce;
+}
+a.red:hover{
+    color:#fa003a;   
+}
+
+
+
+/**************BACK TO TOP***************/
+.back-to-top{
+    cursor: pointer;
+    display:none;
+    position: fixed;
+    font-size: 40px;
+    bottom: 60px;
+    right: 60px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border:1px solid $orange;
+    text-align:center;
+    @include transition(.3s);
+    i{
+        padding:0;
+        color:$orange;
+        vertical-align:top;
+        @include transition(.3s);
+    }
+    i:hover{
+        color:#ffd577;
+    }
+}
+.back-to-top:hover{
+    border:1px solid #ffd577;
+}
+.visible{
+    display:inline-block;
+}
+.back-product{
+    display:inline-block;
+    width:40px;
+    height:40px;
+    border:1px solid $repacorp-red;
+    border-radius:50%;
+    text-align: center;
+    @include transition(.1s);
+    i.fa{
+        color: $repacorp-red;
+        vertical-align: middle;
+        padding-top:5px;
+        @include transition(.1s);
+        &:hover{
+            color:$light-red;
+        }
+    
+    }
+}
+.back-product:hover{
+    border:1px solid $light-red;
+}
+/*************FOOTER**************/
+footer{
+    // margin-top:60px;
+    padding:30px 60px;
+    background:$black;
+    height:auto;
+    width:100%;
+    color:#909090;
+    font-family:$roboto;
+    a{
+        color:#909090;
+        @include transition(.3s);
+    }
+    a:hover{
+        color:$orange;
+    }
+    .row{
+        margin-bottom:10px;
+    }
+    h3{
+        color:$blue;
+    }
+}
+
+.footer-content{
+    max-width:1200px;
+    margin:0 auto;
+}
+
+.footer-ul{
+    padding:0;
+}
+.footer-bottom{
+    width:100%;
+    height:auto;
+    background:$black;
+    border-top:2px dashed #909090;
+    padding-top:5px;
+    color:$gray;
+    padding-bottom:10px;
+}
+.footer-rights{
+    max-width:1200px;
+    margin:0 auto;
+}
+.copyright{
+    font-weight:bolder;
+    text-align:right;
+}
+.showDiv{
+    display:block;
+}
+#addMarkup{
+    display:none;
+}
+#closeMarkup {
+    position:absolute;
+    right:10px;
+    bottom:235px;
+    display:inline-block;
+    i{
+        cursor:pointer;
+        font-size:1.5em;
+        color:$placeholder;
+        &:hover{
+            color:$repacorp-red;
+        }
+    }
+
+    
+}
+/**************SIGNUP***************/
+
+
+/*********FORM REQUEST**************/
+//ON ANOTHER FILE
+
+/**********RESPONSIVE****************/
+@media only screen and (max-width:800px){
+    .product-info-wrap{
+        height:100vh;
+        max-height:none;
+        overflow-y:auto;
+    }
+    .product-close-wrap{
+        height:70px;
+    }
+}
+@media only screen and (max-width:992px){
+    .row-eq-height{
+        display:block;
+    }
+    .video-intro{
+        display:none;
+    }
+    .img-service{
+        width:300px;
+        margin:0 auto;
+        position: relative;   
+        a{
+            img{
+                margin:0;
+            }
+        }
+    }
+    .hide-medium{
+        display:none;
+    }
+    .leftSign{
+        text-align:left;
+        margin-bottom:20px;
+    }
+    #demo-quote-btn{
+        display:block;
+    }
+    #firstLabel.active{@include transform(translate(-10px,-30px))}
+    #lastLabel.active{@include transform(translate(-10px,-30px))}
+    #companyLabel.active{@include transform(translate(-10px,-30px))}
+    #companyFaxLabel.active{@include transform(translate(-10px,-30px))}
+    #companyPhoneLabel.active{@include transform(translate(-10px,-30px))}
+    #companyEmailLabel.active{@include transform(translate(-10px,-30px))}
+    #passwordLabel.active{@include transform(translate(-10px,-30px))}
+    #address1Label.active{@include transform(translate(-10px,-30px))}
+    #address2Label.active{@include transform(translate(-10px,-30px))}
+    #cityLabel.active{@include transform(translate(-10px,-30px))}
+    #postalLabel.active{@include transform(translate(-10px,-30px))}    
+    
+}
+@media only screen and (max-width:1008px){
+    .menu{
+        display:none;
+
+    }
+    .mobile-menu{
+        display:block;
+        height:inherit;
+        font-size:50px;
+        color:$black;
+        padding-top:5px;
+        text-align:right;
+    }i{
+         cursor:pointer;
+         padding:5px;
+     }
+    .background-slide{
+        display:none;
+    }
+    .menu-col{
+        display:inline-block;
+        vertical-align:middle;
+    }
+    .back-to-top{
+        right:20px;
+        bottom:30px;
+    }
+    .footer-content,.footer-content .right{
+        text-align:center !important;
+    }
+}
+@media only screen and (max-width: 768px){
+    .leftSign{
+        text-align:left;
+    }
+    .two-col{
+        div{
+            padding:0;
+       }
+        div:first-child{
+            margin-bottom:10px;
+        }
+    }
+    .explainCol{
+        display:none;
+    }
+    .form-question{
+        display:inline-block;
+        position:absolute;
+        top:10px;
+        right:10px;
+    }
+    .headerLogo{
+        // background:url('../img/Repacorp-Mobile.png') no-repeat;
+        // width: 45px;
+    }
+    .product-row{
+        margin:0;
+    }
+}
+@media only screen and (max-width: 653px){
+    #label-pic{
+        width:100%;
+    }
+    @media only screen and (min-width:280px) and (max-width:630px){
+        #menu-col1{
+            width:20%;
+        }#menu-col2{
+             float:right;
+         }
+    }
+}

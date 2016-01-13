@@ -1,0 +1,11 @@
+<div class="animated fadeInDown">
+<div class="close-wrap">
+    <img class="close-popup" src="img/android-close-new.png" alt="Close Button" ng-click="closeProduct()"/>
+</div>
+<div class="info-wrap">
+    <!--<div class="close-popup" ng-click="close()">X</div>    -->
+    <img class="product-image" src="{{product.productImage}}" />
+    <h2 class="center" ng-bind-html="product.productTitle | newline"></h2>
+    <p class="popup-paragraph" ng-bind-html="product.productDescription | newline"></p>
+</div>
+</div>

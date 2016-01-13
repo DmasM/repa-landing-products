@@ -1,0 +1,125 @@
+{
+	"productInfo":[
+		{
+			"id":"thermal-transfer-label-rolls",
+			"productTitle":"Thermal Transfer Label Rolls",
+			"productImage":"img/products_photos/Thermal-Transfer-Labels.jpg",
+			"productDescription":"Thermal transfer labels require a ribbon when printing. Thermal transfer printers apply heat to the thermal printhead, which transfers the image through a wax and/or resin ribbon to the label. With thermal transfer labels, the image is crisp, durable and fairly scratch resistant. If you need a label that lasts a year or longer, use thermal transfer labels. Some examples of thermal transfer labels are: asset tagging, inventory identification, laboratory specimens, outdoor and freezer applications.<br/>Repacorp’s ultra-smooth two-side coated thermal transfer premium printable labels have permanent acrylic adhesive with good low temperature performance for most normal substrates including corrugated board, films, and non-polar surfaces.  We offer different outside diameter widths and core sizes to meet your customer’s thermal transfer printer specifications.<br/><a href='https://www.youtube.com/watch?v=dAsgQTp_4g0' target='_blank'>Watch a video</a> that illustrates the difference between thermal transfer and direct thermal labels."
+		},
+		{
+			"id":"thermal-transfer-fanfold-stacks",
+			"productTitle":"Thermal Transfer Fanfold Stacks",
+			"productImage":"img/products_photos/Thermal-Transfer-Fanfold-Stacks.jpg",
+			"productDescription":"Repacorp’s thermal transfer fanfold stacks are perfed between each label and fanfolded into stacks for easy thermal transfer printing.<br/>Repacorp’s ultra-smooth two-side coated thermal transfer premium printable labels have permanent acrylic adhesive with good low temperature performance for most normal substrates including corrugated board, films, and non-polar surfaces."
+		},
+		{
+			"id":"thermal-transfer-tags",
+			"productTitle":"Thermal Transfer Tags",
+			"productImage":"img/products_photos/Thermal-Transfer-Tags.jpg",
+			"productDescription":"Repacorp’s 7pt. thermal transfer tags feature C1S tag stock with notches at the perforation for sensing. Tags come in various sizes and are fanfolded into stacks for easy printing."
+		},
+		{
+			"id":"thermal-transfer-specialty-materials",
+			"productTitle":"Thermal Transfer Specialty Materials",
+			"productImage":"img/products_photos/Thermal-Transfer-Speciality-Materials.jpg",
+			"productDescription":"Repacorp offers a variety of stock thermal transfer solutions to satisfy your customer’s needs.  We offer material with removable adhesive, Hammerlock adhesive (very aggressive), and we offer smudge proof Kimura, matte polypropylene film, and polyester thermal transfer labels. "
+		},
+		{
+			"id":"floodcoated-thermal-transfer-labels-rolls",
+			"productTitle":"Floodcoated Thermal Transfer Labels Rolls",
+			"productImage":"img/products_photos/Floodcoated-Thermal-Transfer.jpg",
+			"productDescription":"Available with 3” core and an 8” outside diameter, or 1” core and a 4” diameter, Repacorp offers a variety of floodcoated PMS and fluorescent colors. A variety of sizes are available in Pantone Yellow, PMS 176 Pink, PMS 032 Red, PMS 290 Blue, PMS 345 Green, and PMS 1495 Orange.<br/>Fluorescent colors: PMS 805 Red, Chartreuse (Yellow-Green), PMS 802 Green, PMS 804 Orange, and PMS 806 Pink."
+		},
+		{
+			"id":"thermal-transfer-circles",
+			"productTitle":"Thermal Transfer Circles",
+			"productImage":"img/products_photos/Thermal-Transfer-Circles.jpg",
+			"productDescription":"Repacorp’s stock thermal transfer circles come with 1” and 1.5” diameters. Circles come in white, various PMS colors and fluorescents: PMS 032 Red, Black, PMS 290 Blue, PMS 265 Purple, PMS 345 Green, Pantone Yellow, PMS 1905 Pink, PMS 4705 Brown, PMS 1495 Orange.<br/>Fluorescent colors: PMS 805 Red, Chartreuse (Yellow-Green), PMS 802 Green, PMS 804 Orange, PMS 806 Pink."
+		},
+		{
+			"id":"rfid-enabled-thermal-transfer-labels",
+			"productTitle":"RFID Enabled Thermal Transfer Labels",
+			"productImage":"img/products_photos/RFID-Labels.jpg",
+			"productDescription":"Repacorp’s stock RFID enabled labels are compatible with available UHF (915 MHz) or HF (13.56 MHz) transponders. We insert a variety of materials: thermal transfer, films, tag, and synthetic tag, with specialty adhesives available. All of our stock RFID labels are delivered 100% verified. Pre-encoding and imprinting is available."
+		},
+		{
+			"id":"direct-thermal-label-rolls",
+			"productTitle":"Direct Thermal Label Rolls",
+			"productImage":"img/products_photos/Direct-Thermal-Labels.jpg",
+			"productDescription":"Direct thermal printers apply heat to the thermal printhead, activating the direct thermal media. Through a chemical reaction, the label turns dark where the heat is applied. With direct thermal labels, there is no ink, toner, or ribbon consumable - the only supply needed is the direct thermal labels. Direct thermal labels are less costly because you don't have to buy a ribbon. The downside to direct thermal labels is that they are not scratch resistant and will start to turn when exposed to lighting, making them hard to read. Use direct thermal labels for short term applications and when you want to print without a ribbon. Some examples of direct thermal labels are: shipping labels, name tags, receipts, pick tickets and visitor passes.<br/>Repacorp offers non-topcoated and topcoated direct thermal labels. Our non-topcoated direct thermal labels are uncoated medium sensitivity, with an all temp acrylic a permanent adhesive. This material has excellent image quality. Because this material is uncoated, it should be tested by the end user before ordering large quantities. This product should not be used in applications that require extreme environmental resistance.<br/>Repacorp’s topcoated direct thermal labels are topcoated medium sensitivity, with an all temp acrylic permanent adhesive. This material has excellent image quality and it provides excellent results in most environmental conditions. We recommend that any direct thermal material be tested in an end-user application before ordering large quantities.<br/><a href='https://www.youtube.com/watch?v=dAsgQTp_4g0' target='_blank'>Watch a video</a> that illustrates the difference between thermal transfer and direct thermal labels."
+		},
+		{
+			"id":"direct-thermal-tags",
+			"productTitle":"Direct Thermal Tags",
+			"productImage":"img/products_photos/Direct-Thermal-Tags.jpg",
+			"productDescription":"Repacorp’s direct thermal tags are manufactured with 7pt. direct thermal tag stock. These 3.3” x 1.9” tags are perfed between each tag and fanfolded into stacks. A black sense mark is printed on back side of the tag. Used for Postal bag and tray tags, these USPS tags are a hard to find stock item."
+		},
+		{
+			"id":"floodcoated-direct-thermal-label-rolls",
+			"productTitle":"Floodcoated Direct Thermal Label Rolls",
+			"productImage":"img/products_photos/Floodcoated-Direct-Thermal.jpg",
+			"productDescription":"Available with 3” cores and an 8” outside diameter, or 1” cores and a 4” diameter, Repacorp offers a variety of floodcoated direct thermal colors. A variety of sizes are available in Pantone Yellow, PMS 032 Red, PMS 292 Blue, PMS 345 Green, and PMS 1505 Orange. PMS Colors are screened back 80% to allow for crisp direct thermal imaging."
+		},
+        {
+			"id":"liner-free-repositionable-direct-thermal-rolls",
+			"productTitle":"Liner-Free Repositionable Direct Thermal Rolls",
+			"productImage":"img/products_photos/Linerless-Direct-Thermal-Rolls.jpg",
+			"productDescription":"Repacorp’s liner-free direct thermal rolls come to you on a continuous roll; you determine the label length, on site, depending on your unique requirements! Repacorp uses variable length media adhesive and is NOT dependent on black TOF marks or the 1\" (25.4mm) intervals so as to not cut through the adhesive. Only the amount of label actually needed is used, as it does not need to advance to the next black TOF mark to cut. Plus, you can add marketing messages to the end of receipts. Messages can be programmed to change daily, weekly, or monthly!<br/> You can stick, remove, and restick the label as many times as needed without losing adhesive tack. The adhesive is a continuous linear band or pattern of microsphere adhesive, not a patch semi-permanent adhesive. The microsphere property allows the label to be reapplied many times without leaving residue or damaging the surface area."
+		},
+        {
+			"id":"laser-sheets",
+			"productTitle":"Laser Sheets",
+			"productImage":"img/products_photos/Laser-Sheets.jpg",
+			"productDescription":"Repacorp’s EDP laser sheets are compatible with laser and ink jet printers. We offer a variety of configurations and materials. We offer crisp white paper, clear polyester, white polyester, metallic foil and fluorescent sheets; and we even offer a durable vinyl drum label. Most laser sheets come with permanent adhesive, but we do have removable and ultra-removable laser sheets in selective configurations. "
+		},
+        {
+			"id":"integrated-label-sheets",
+			"productTitle":"Integrated Label Sheets",
+			"productImage":"img/products_photos/Integrated-Label-Sheets.jpg",
+			"productDescription":"Utilizing the best materials available, along with a high speed inline manufacturing process, Repacorp provides stock and custom integrated label sheets at very competitive prices. High quality paper, specialized application liner and a hot melt process for various types of adhesives, allows for a \"Best In Class\" finished integrated label sheet.<br/>Repacorp's Integrated Label Sheets utilize 24# laser MOCR paper. This paper's stiffness properties ensure proper form strength, exceptional insertion performance, and excellent printability with laser, ink jet and dot matrix printers.<br/>Repacorp's integrated laser sheets have full width liners. Full width liners promote better printer feed, stacking, and improved variable printing due to consistent thickness across the form and less chance of damage during transportation. Running a full width liner generates a smoother feeding integrated label sheet for all types of laser printers. Less jams, less miss-feeds, less adhesive buildup and less damaged product equals more value!<br/>See and feel the quality for yourself!"
+		},
+        {
+			"id":"inventory-control-labels",
+			"productTitle":"Inventory Control Labels",
+			"productImage":"img/products_photos/Inventory-Control-Labels.jpg",
+			"productDescription":"Now that you are selling labels to a company, contact their inventory control officer and introduce them to Repacorp’s inventory control stock labels. Repacorp’s stock inventory control labels are imprinted with numbers, days of the week, months of the year, and a variety of inventory imprints to help the inventory process go smooth. Labels come in varied colors for easy distinction during the inventory process."
+		},
+        {
+			"id":"handling-labels",
+			"productTitle":"Handling Labels",
+			"productImage":"img/products_photos/Handling-Labels.jpg",
+			"productDescription":"Repacorp’s pre-printed stock handling labels cover all the necessary shipping warnings: Fragile, Handle With Care; Please Do Not Drop; Delicate Instruments, Handle with Care; Electronic Material, Don’t Drop or Crush; and This Side Up are some of the messages we offer."
+		},
+        {
+			"id":"made-usa-labels",
+			"productTitle":"Made in the U.S.A Labels",
+			"productImage":"img/products_photos/Made-in-the-USA-Labels.jpg",
+			"productDescription":"Consumers are looking for higher quality products with access to real people for technical support and customer service. Consumers find these products manufactured in the U.S.A. Help your customers take the lead by promoting their “Made in the USA” products with Repacorp’s stock labels. We offer a variety of designs that feature the proud United States’ stars and stripes."
+		},
+        {
+			"id":"digital-printing",
+			"productTitle":"Digital Printing",
+			"productImage":"img/custom_products_photos/Digital-Printing.jpg",
+			"productDescription":"<br/><span class='popup-second-header'>Short Run Digital Labels with Laser Cutting</span><br/>To make our distributors extremely competitive, Repacorp has heavily invested in digital presses and laser cutting systems, eliminating plate and tooling charges. Our 4-color digital presses offer black variable printing and have opaque white ink options. With Repacorp's digital short run system, you will be able to offer your customers low label quantities at economical prices, decreasing their inventory with smaller on-demand label runs.</br><br/><span class='popup-second-header'>High-Speed Digital Technology for Long Label Runs with Multiple Versions</span><br/>Repacorp's high-speed 13\" wide digital press combines the productivity associated with flexo (speeds up to 246 ft/min) with the flexibility offered by rapid job change. Our 4-color digital press uses curable UV inks, offers an opaque white option, cold foil and two additional flexo stations for PMS colors, fluorescents, metallic ink or spot varnish. Kyocera print heads provide 600 dpi native resolution, which means more smaller drops are printed in order to create finer detail on both images and small point text.<br/>Our press offers back printing, black variable data, and laminating with roll to roll or roll to sheet finishing on just about any material. Our three flexo die stations provide top cutting, perforating, sheeting and undercutting capabilities. To top it all off, we added an Advanced Vision Technology system that delivers 100% in-line print inspection and quality control. With the AVT system we are able to ensure quality and color repeatability from label to label and from one run to the next.<br/>Our press offers back printing, black variable data, and laminating with roll to roll or roll to sheet finishing on just about any material. Our three flexo die stations provide top cutting, perforating, sheeting and undercutting capabilities. To top it all off, we added an Advanced Vision Technology system that delivers 100% in-line print inspection and quality control. With the AVT system we are able to ensure quality and color repeatability from label to label and from one run to the next.<br/><i>Note: This press is for large label runs (ideal for large runs with multiple SKUs). It is not cost effective for short runs and does not replace our five digital short run presses with laser cutting located in Ohio, Wisconsin and Arizona.</i>"
+		},
+        {
+			"id":"flexo-printing",
+			"productTitle":"Flexographic Printing",
+			"productImage":"img/custom_products_photos/Flexographic-Printing.jpg",
+			"productDescription":"Flexography is still the least costly solution for long label runs without multiple SKUs. Repacorp houses 35 flexographic presses within our three facilities located in Ohio, Wisconsin and Arizona. Our flexography capabilities include:<br/><ul class='bullet-list'><li>Blank to 12-color labels</li><li>Hot stamping</li><li>Variable imaging</li><li>Process color printing</li><li>Re-laminate and de-laminate</li><li>Direct thermal and thermal transfer</li><li>UV printing up to 4 colors</li><li>In-house platemaking with up to 23 million pixels per square inch</li></ul>"
+		},
+        {
+			"id":"variable-printing",
+			"productTitle":"Variable Printing",
+			"productImage":"img/custom_products_photos/Variable-Printing.jpg",
+			"productDescription":"An industry leader in sequential or random numbering and bar coding, Repacorp meets the diverse needs of our customers with custom sizes, colors, and adhesives.<br/>Our Markem press prints up to 4 thermal transfer colors, sequential numbers and barcodes. For short label runs, our digital presses print 4-color process, plus opaque white, with black variable print. Our high-speed digital press offers 4-color process, black variable print, opaque white, cold foil, plus two additional flexo stations for PMS colors, spot varnish or fluorescents.<br/>Repacorp's Domino K600i press, attached to a 13\" 6-color flexographic press, provides 6-colors with high speed, high resolution black variable print (it can even print variable halftones). The Domino press uses \"stitchlink\" technology, which means we no longer need to worry about the layout of the labels. The Domino utilizes a fully addressable 13.3\" print bar instead of individual print heads that need to be stitched together at times to create a bar code or image. With stitchlink technology, Repacorp can print variable data anywhere across the web without limitation. Our new Domino press brings variable print to scratch-off and peel-off game pieces and variable coding to security, pharmaceutical and industrial markets. In the age of traceability, everyone wants a code and/or mark. The Domino gives you the versatility for variable data, whether it is a small GS1 code or a large boat license sticker."
+		},
+        {
+			"id":"promotional-labels",
+			"productTitle":"Promotional Labels & Cards",
+			"productImage":"img/custom_products_photos/Promotional.jpg",
+			"productDescription":"Statistics show that products containing promotions are far more likely to be noticed on store shelves. Repacorp’s on-pack and in-pack coupons and game pieces will motivate consumers to purchase your customer’s product.<br/>Instant Redeemable Coupons (IRC) are highly measureable and stimulate demand. Repacorp’s IRC formats include patterned adhesive, flat folded, winged and fry release. Repacorp’s Lustorite® coupons are FDA, USDA and Canadian H&W accepted for direct food contact without an expensive overwrap.<br/>Promotional pieces help nonprofits receive more in donations compared to generic direct mail. Repacorp’s high quality return address labels, MailNotes®, page premiums, window static clings, bumper stickers, decals and piggyback labels raise funds through direct mail advertising."
+		}
+	]
+
+}
