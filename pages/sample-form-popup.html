@@ -21,7 +21,7 @@
                 <div ng-show="sampleForm.$submitted || sampleForm.company.$touched">
                     <span ng-show="sampleForm.company.$error.required" class="error">Company name is required</span>
                 </div>
-                <input type="text" placeholder="Phone" name="phone" ng-model="formSample.phone"  required>
+                <input type="text" placeholder="Phone" name="phone" class="phone" ng-model="formSample.phone"  required>
                 <div ng-show="sampleForm.$submitted || sampleForm.phone.$touched">
                     <span ng-show="sampleForm.phone.$error.required" class="error">Phone number is required</span>
                 </div>
@@ -33,17 +33,17 @@
                     <span ng-show="sampleForm.address.$error.required" class="error">Street address is required</span>
                 </div>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6" style="padding:0">
                         <input type="text" placeholder="City" name="city" ng-model="formSample.city"  required>
                         <div ng-show="sampleForm.$submitted || sampleForm.city.$touched">
                             <span ng-show="sampleForm.city.$error.required" class="error">City is required</span>
                         </div>
-                        <input type="text" placeholder="Zipcode" name="zipcode" ng-model="formSample.zipcode"  required>
+                        <input type="text" placeholder="Zipcode" name="zipcode" class="zipcode" ng-model="formSample.zipcode"  required>
                         <div ng-show="sampleForm.$submitted || sampleForm.zipcode.$touched">
                             <span ng-show="sampleForm.zipcode.$error.required" class="error">Zipcode is required</span>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6" style="padding-right:0">
                         <input type="text" placeholder="State" name="state" ng-model="formSample.state"  required>
                         <div ng-show="sampleForm.$submitted || sampleForm.state.$touched">
                             <span ng-show="sampleForm.state.$error.required" class="error">State is required</span>

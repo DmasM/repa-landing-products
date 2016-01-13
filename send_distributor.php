@@ -83,7 +83,7 @@ $message .= "<tr><td><strong>Email:</strong></td><td>$email</td></tr>";
 $message .= "<tr><td><strong>Website:</strong></td><td>$website</td></tr>";
 
 //Free Sample Bottom Message
-$sampleBottom = "<tr><td><strong>Business Plan</strong></td><td>$explain</td></tr>";
+$sampleBottom = "<tr><td><strong>Business Plan:</strong></td><td>$explain</td></tr>";
 $sampleBottom = "<tr><td><strong>How did you hear about us?</strong></td><td>$option</td></tr>";
 $sampleBottom .= "</table></body></html>";
 

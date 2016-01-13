@@ -1,29 +1,13 @@
+/*Fastclick for mobile users*/
 $(function() {
     var attachFastClick = Origami.fastclick;
     attachFastClick(document.body);
 });
+
+
 /*******************ANGULAR APP*********************/
 var myApp = angular.module('app',[]);
 
-// .config(['$routeProvider', function($routeProvider){
-	
-// 	$routeProvider
-// 	.when('/',{
-// 		templateUrl : 'pages/products.html',
-// 		controller: 'productsController'
-// 	})
-//     .when('/stock-labels', {
-//         templateUrl : 'pages/stock-labels.html',
-//         controlller: 'stockLabelsController'
-//     })
-// 	.when('/product/:productInfo', {
-// 		templateUrl : 'pages/product-info.html', 
-// 		controller: 'productInfoController'
-// 	})
-// 	.otherwise({
-// 		redirectTo: '/'
-// 	})
-// }])
 
 /***************CONTROLLERS****************** */
 myApp.controller('mainController', ['$scope', function($scope){    
@@ -32,26 +16,34 @@ myApp.controller('mainController', ['$scope', function($scope){
     var logo = $('.headerLogo');
     var header = $('.header-container');    
     
+    
+    if($(window).width() < 735){
+        logo.attr('src', 'img/Repacorp-Mobile.png');
+    }
+    
     stickyHeader();
     if($(window).scrollTop() > 350){
         toTop.addClass('visible');
     }
+    
     toTop.on('click', function(){
         scrollToTop();
     });
     
     /***********RESIZE WINDOW*************/
+    
     $(window).resize(function () {
-        var screenWidth = $(window).width() + 17;
+        var screenWidth = $(window).width();
         
-        if (screenWidth < 630) {      //was 510            
+        if (screenWidth < 735) {               
             logo.attr('src', 'img/Repacorp-Mobile.png');            
-        } if (screenWidth >= 630) {
+        } if (screenWidth >= 735) {
             logo.attr('src', 'img/Repacorp-Horizontal-Logo400.png');            
         }
 
     });
 
+    /**********SCROLLING FUNCTION********** */
     $(window).scroll(function(){
         stickyHeader();
         if($(this).scrollTop() > 350){
@@ -78,25 +70,10 @@ myApp.controller('mainController', ['$scope', function($scope){
     $scope.master = {}   
 }]);
 
-// .controller('productsController', ['$scope', '$routeParams', function($scope, $routeParams){
-	
-// }])
-
-// .controller('productInfoController', ['$scope', '$routeParams', '$http', function($scope, $routeParams, $http){
-// 	var id = $routeParams.productInfo;	
-// 	$http.get('../products.json').success(function(data){		
-// 		var info = data.productInfo;
-// 		for (var i in info){
-// 			if (id == info[i].id){
-// 				$scope.product = info[i];								
-// 				return;
-// 			}
-// 		}
-// 	})
-// }])
 
 
 /*******************DIRECTIVES**********************/
+/*Main Products directive*/
 myApp.directive('products', function(){    
     return{
         restrict: 'EA',
@@ -105,6 +82,8 @@ myApp.directive('products', function(){
     };
 })
 
+/*Product Info Popup Directive; 
+Template: pages/product-info-popup.html*/
 .directive('productInfoPopup', ['$http', function($http){
     return{
         restrict: 'EA',
@@ -135,11 +114,18 @@ myApp.directive('products', function(){
     };
 }])
 
+/*Sample Form Popup
+Template: pages/sample-form-popup.html*/
 .directive('sampleFormPopup', ['$http', function($http){     
     return{
         restrict: 'EA',
         templateUrl: 'pages/sample-form-popup.html',
-        link: function($scope, $ele, $attr){                    
+        link: function($scope, $ele, $attr){
+              
+            /*INPUT MASK*/
+            $('.phone').mask('(999)999-9999');
+            $('.zipcode').mask('99999');
+                              
             $scope.sampleFormPopup = function(){  
                 document.body.style.overflow = 'hidden';                            
                 $ele.show();    
@@ -149,29 +135,22 @@ myApp.directive('products', function(){
                 $ele.hide();              
             }
             $scope.formSample = {};
-            $scope.submitSample = function(){                
-                if($ele.children().children('form').hasClass('ng-invalid')){                    
+            $scope.submitSample = function(){                             
+                if($ele.children().children().children('form').hasClass('ng-invalid')){                                  
                     return;
                 }                            
                 $scope.formSpinner = true;                   
-                
-                $http({
-                    method:'POST',
-                    url: 'send_free_sample.php',
-                    data: $scope.formSample        
-                })  
-                .then(function(success,error){
-                    if (success){                        
+                var sampleData = $scope.formSample;
+                $http.post('send_free_sample.php', sampleData)
+                    .then(function successCallBack(response){
                         $scope.formSpinner = false;
                         $ele.hide();
-                        $scope.showSuccess();                      
-                    } 
-                    if(error){                        
+                        $scope.showSuccess();
+                    }, function errorCallBack(response){
                         $scope.formSpinner = false;
                         $ele.hide();
-                        $scope.showError();
-                    }                                           
-                });                
+                        $scope.showSuccess();
+                    });                              
             }      
                  
             $scope.clearSample = function(){ 
@@ -183,11 +162,17 @@ myApp.directive('products', function(){
     }
 }])
 
+/*Become a Distributor Form Popup
+Template: pages/distributor-form-popup.html*/
 .directive('distributorFormPopup',['$http', function($http){
     return{
         restrict: 'EA',
         templateUrl: 'pages/distributor-form-popup.html',
-        link: function($scope, $ele, $attr){
+        link: function($scope, $ele, $attr){            
+            
+            /*INPUT MASK*/
+            $('.phone').mask('(999)999-9999');
+            $('.zipcode').mask('99999');
             
             $scope.distForm = function(){
                 document.body.style.overflow = 'hidden'
@@ -199,26 +184,21 @@ myApp.directive('products', function(){
             }
             $scope.formDist = {}
             $scope.submitDist = function(){                
-                if($ele.children().children('form').hasClass('ng-invalid')){
+                if($ele.children().children().children('form').hasClass('ng-invalid')){
                     return;
                 }
                 $scope.formSpinner = true;
-                
-                $http({
-                    method:'POST',
-                    url:'send_distributor.php',
-                    data: $scope.formSample
-                }).then(function(success, error){
-                    if(success){
+                var distData = $scope.formDist;
+                $http.post('send_distributor.php', distData)
+                    .then(function successCallBack(response){
                         $scope.formSpinner = false;
                         $ele.hide();
-                        $scope.showSuccess();
-                    }else{
+                        $scope.showSuccess();        
+                    }, function errorCallBack(response){
                         $scope.formSpinner = false;
                         $ele.hide();
                         $scope.showError();
-                    }
-                });
+                    })               
             }
             $scope.clearDist = function(){
                 $scope.form.$setPristine();
@@ -229,6 +209,7 @@ myApp.directive('products', function(){
     }    
 }])
 
+/*Success form popup after the form has successfully submitted*/
 .directive('successFormPopup', function(){
     return{
         restrict: 'EA',
@@ -248,6 +229,7 @@ myApp.directive('products', function(){
     }
 })
 
+/*Loading Spinner directive when the user click submit*/
 .directive('spinner', function(){
     return{
         restrict:'EA',
@@ -255,7 +237,14 @@ myApp.directive('products', function(){
     }
 })
 
+.directive('imageSlider', function(){
+    return{
+        restrict:'EA',
+        templateUrl: 'pages/image-slider.html'
+    }
+})
 /*************FILTERS***********************/
+/*trust HTML from JSON*/
 myApp.filter('newline', ['$sce', function($sce){
      return function(text) {      
         return $sce.trustAsHtml(text);

@@ -337,7 +337,8 @@ header{
 }
 .menu-right{    
     font-size:1.1em;
-    padding-right:3em;
+    // padding-right:3em;
+    padding-right:0;
     a{
         display:inline-block;        
         color:$dark;     
@@ -774,7 +775,10 @@ h4.circle-img-title{
     overflow-y: auto;
     margin:0 auto;
     padding:45px;
-    z-index:1005;    
+    z-index:1005;
+    h2{
+        margin-bottom:25px;
+    }    
 }
 .close-wrap{
     position:relative;
@@ -968,6 +972,54 @@ h4.circle-img-title{
          transform:scale(1.0);
      }
  }
+ 
+ /**********SINGLE IMAGE***********/
+ .image-container{
+     text-align:center;
+     margin:35px 0;
+     .photo{
+         max-width:100%;
+         height:auto;
+     }
+ }
+ /************SLIDER IMAGE**************/
+ $slides: 5;
+ $time_per_slide: 10;
+ $total_animation_time: $time_per_slide * $slides;
+ 
+ .slider-container{
+     display:block;
+     position:relative;
+     margin:35px 0;
+     text-align:center;  
+     width:600px;
+     height:375px;   
+ }
+
+ .slider-photo{
+    position:absolute;
+    top:0;left:0;
+    max-width:100%;
+    height:auto;
+    margin:0 auto;
+    animation: round #{$total_animation_time}s infinite;
+    opacity:0;
+}
+
+@keyframes round{
+    35%{
+        opacity: 1;
+    }
+    40%{
+        opacity: 0;
+    }
+}
+
+@for $index from 1 to $slides + 1{
+  .slider-photo:nth-child(#{$index}){
+    animation-delay:#{$total_animation_time - $time_per_slide * $index}s
+  }
+}
  /************BUTTONS & COLOR *************/
  .btn{
      border-radius:0;
@@ -1389,6 +1441,7 @@ footer{
             width:20%;
         }#menu-col2{
              float:right;
+             width:75%;
          }
     }
 }
