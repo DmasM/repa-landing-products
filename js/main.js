@@ -1,3 +1,4 @@
+
 /*Fastclick for mobile users*/
 $(function() {
     var attachFastClick = Origami.fastclick;
@@ -10,12 +11,18 @@ var myApp = angular.module('app',[]);
 
 
 /***************CONTROLLERS****************** */
-myApp.controller('mainController', ['$scope', function($scope){    
+myApp.controller('mainController', ['$scope', function($scope){  
     
+    var id;
     var toTop = $('.back-to-top');
     var logo = $('.headerLogo');
     var header = $('.header-container');    
     
+    // if(window.location.hash){
+    //     id = window.location.hash;
+    //     console.log(id);
+    //     scrollToElement(id);        
+    // }    
     
     if($(window).width() < 735){
         logo.attr('src', 'img/Repacorp-Mobile.png');
@@ -66,7 +73,12 @@ myApp.controller('mainController', ['$scope', function($scope){
             $('.header-content').css('border-bottom', '1px solid #f1f1f1');
         }
     }
-        
+    
+    // function scrollToElement(ele){
+    //     console.log(ele);
+    //     console.log($(ele));
+    //     $('html, body').animate({scrollTop: $(ele).offset().top}, 500);
+    // }    
     $scope.master = {}   
 }]);
 
@@ -77,7 +89,16 @@ myApp.controller('mainController', ['$scope', function($scope){
 myApp.directive('products', function(){    
     return{
         restrict: 'EA',
-        templateUrl: 'pages/products.html' 
+        templateUrl: 'pages/products.html',
+        link: function($scope, $ele, $attr){
+            if(window.location.hash){
+                var id = window.location.hash;                
+                scrollToElement(id);
+            }
+            function scrollToElement(ele){
+                $('html, body').animate({scrollTop: $(ele).offset().top}, 300);
+            }
+        } 
                 
     };
 })
