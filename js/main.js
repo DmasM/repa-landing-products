@@ -16,13 +16,7 @@ myApp.controller('mainController', ['$scope', function($scope){
     var id;
     var toTop = $('.back-to-top');
     var logo = $('.headerLogo');
-    var header = $('.header-container');    
-    
-    // if(window.location.hash){
-    //     id = window.location.hash;
-    //     console.log(id);
-    //     scrollToElement(id);        
-    // }    
+    var header = $('.header-container');           
     
     if($(window).width() < 735){
         logo.attr('src', 'img/Repacorp-Mobile.png');
@@ -74,11 +68,6 @@ myApp.controller('mainController', ['$scope', function($scope){
         }
     }
     
-    // function scrollToElement(ele){
-    //     console.log(ele);
-    //     console.log($(ele));
-    //     $('html, body').animate({scrollTop: $(ele).offset().top}, 500);
-    // }    
     $scope.master = {}   
 }]);
 

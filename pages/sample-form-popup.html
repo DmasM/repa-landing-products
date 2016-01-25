@@ -56,9 +56,14 @@
                 </div>
                 <select name="sample" ng-model="formSample.options" required>
                     <option value="">Select a sample</option>
-                    <option value="Custom Labels">Custom Labels</option>
+                    <option value="Standard Sample Packet">Standard Sample Packet</option>
+                    <option value="Custom Flexo">Custom Flexo</option>
+                    <option value="Digital Short Runs">Digital Short Runs</option>                    
                     <option value="Stock Labels">Stock Labels</option>
+                    <option value="Large Format Digital Printing">Large Format Digital Printing</option>
                     <option value="RFID">RFID</option>
+                    <option value="Variable Printing">Variable Printing</option>
+                    <option value="Other">Other</option>
                 </select>
                 <div ng-show="sampleForm.$submitted">
                     <span ng-show="sampleForm.sample.$error.required" class="error">Please select a sample</span>
